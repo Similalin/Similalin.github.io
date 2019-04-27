@@ -6,21 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java代理模式(Proxy) | Hexo</title>
+  <title>Java 数据结构之二叉树(中序遍历) | Zhanglinfeng&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142/**代理模式(Proxy):为其他对象提供一种代理以控制对这个对象的访问代理模式说白了就是 &quot;真实对象&quot;的代表，在访问对象时引入一定程度的间接性因为这总间接性可以附近啊多种用途。  */public class Proxy&amp;#123;    pub">
+  <meta name="description" content="构造二叉树类，创建添加和输出方法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253public class BinaryTree &amp;#123;	private Node root;//根节点	//添加节点	public void add(int data)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java代理模式(Proxy)">
-<meta property="og:url" content="http://yoursite.com/2019/04/24/我的第一篇博客文章/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142/**代理模式(Proxy):为其他对象提供一种代理以控制对这个对象的访问代理模式说白了就是 &quot;真实对象&quot;的代表，在访问对象时引入一定程度的间接性因为这总间接性可以附近啊多种用途。  */public class Proxy&amp;#123;    pub">
+<meta property="og:title" content="Java 数据结构之二叉树(中序遍历)">
+<meta property="og:url" content="http://yoursite.com/2019/04/26/java数据结构之二叉树/index.html">
+<meta property="og:site_name" content="Zhanglinfeng&#39;s blog">
+<meta property="og:description" content="构造二叉树类，创建添加和输出方法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253public class BinaryTree &amp;#123;	private Node root;//根节点	//添加节点	public void add(int data)">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-24T11:36:23.650Z">
+<meta property="og:image" content="http://yoursite.com/images/test1.png">
+<meta property="og:updated_time" content="2019-04-26T13:32:51.804Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java代理模式(Proxy)">
-<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142/**代理模式(Proxy):为其他对象提供一种代理以控制对这个对象的访问代理模式说白了就是 &quot;真实对象&quot;的代表，在访问对象时引入一定程度的间接性因为这总间接性可以附近啊多种用途。  */public class Proxy&amp;#123;    pub">
+<meta name="twitter:title" content="Java 数据结构之二叉树(中序遍历)">
+<meta name="twitter:description" content="构造二叉树类，创建添加和输出方法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253public class BinaryTree &amp;#123;	private Node root;//根节点	//添加节点	public void add(int data)">
+<meta name="twitter:image" content="http://yoursite.com/images/test1.png">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Zhanglinfeng&#39;s blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -61,8 +63,6 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
-	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -87,9 +87,7 @@
 		        
 					<a class="weibo" target="_blank" href="https://weibo.com/u/5668149014" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=916590349@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -119,8 +117,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -130,9 +126,7 @@
 			        
 						<a class="weibo" target="_blank" href="https://weibo.com/u/5668149014" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=916590349@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -141,9 +135,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
-		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -158,27 +150,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我的第一篇博客文章" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-java数据结构之二叉树" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java代理模式(Proxy)
+      Java 数据结构之二叉树(中序遍历)
     </h1>
   
 
         
-        <a href="/2019/04/24/我的第一篇博客文章/" class="archive-article-date">
-  	<time datetime="2019-04-24T11:31:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-24</time>
+        <a href="/2019/04/26/java数据结构之二叉树/" class="archive-article-date">
+  	<time datetime="2019-04-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">代理模式(Proxy):为其他对象提供一种代理以控制对这个对象的访问</span></span><br><span class="line"><span class="comment">代理模式说白了就是 "真实对象"的代表，在访问对象时引入一定程度的间接性</span></span><br><span class="line"><span class="comment">因为这总间接性可以附近啊多种用途。</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Proxy</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Action a=<span class="keyword">new</span> UserAction();</span><br><span class="line">        ActionProxy proxy=<span class="keyword">new</span> ActionProxy(a);</span><br><span class="line">        proxy.doAction();</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ActionProxy</span> <span class="keyword">implements</span> <span class="title">Action</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Action target;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ActionProxy</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ActionProxy</span><span class="params">(Action target)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target=target;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAction</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">long</span> startTime=System.currentTimeMillis();</span><br><span class="line">        target.doAction();<span class="comment">//执行真正的业务</span></span><br><span class="line">        <span class="keyword">long</span> endTime=System.currentTimeMillis();</span><br><span class="line">        System.out.println(<span class="string">"共耗时："</span>+(endTime-startTime));</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Action</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAction</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserAction</span> <span class="keyword">implements</span> <span class="title">Action</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAction</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++)&#123;</span><br><span class="line">            System.out.println(<span class="string">"y用户开始工作..."</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="构造二叉树类，创建添加和输出方法"><a href="#构造二叉树类，创建添加和输出方法" class="headerlink" title="构造二叉树类，创建添加和输出方法"></a>构造二叉树类，创建添加和输出方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinaryTree</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> Node root;<span class="comment">//根节点</span></span><br><span class="line">	<span class="comment">//添加节点</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(root==<span class="keyword">null</span>)&#123;</span><br><span class="line">			root=<span class="keyword">new</span> Node(data);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			root.addNode(data);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//输出节点</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">		root.printNode();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">		<span class="keyword">private</span> <span class="keyword">int</span> data;</span><br><span class="line">		<span class="keyword">private</span> Node left;</span><br><span class="line">		<span class="keyword">private</span> Node right;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">			<span class="keyword">this</span>.data=data;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addNode</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">			<span class="comment">//传进来的值小于当前值，存左边</span></span><br><span class="line">			<span class="keyword">if</span>(<span class="keyword">this</span>.data&gt;data)&#123;</span><br><span class="line">				<span class="keyword">if</span>(<span class="keyword">this</span>.left==<span class="keyword">null</span>)&#123;</span><br><span class="line">					<span class="keyword">this</span>.left=<span class="keyword">new</span> Node(data);</span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					<span class="keyword">this</span>.left.addNode(data);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="comment">//传进来的值大于当前值,存右边</span></span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="keyword">if</span>(<span class="keyword">this</span>.right==<span class="keyword">null</span>)&#123;</span><br><span class="line">					<span class="keyword">this</span>.right=<span class="keyword">new</span> Node(data);</span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					<span class="keyword">this</span>.right.addNode(data);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//中序遍历</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printNode</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(<span class="keyword">this</span>.left!=<span class="keyword">null</span>)&#123;</span><br><span class="line">				<span class="keyword">this</span>.left.printNode();</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.print(<span class="keyword">this</span>.data+<span class="string">"-&gt;"</span>);</span><br><span class="line">			<span class="keyword">if</span>(<span class="keyword">this</span>.right!=<span class="keyword">null</span>)&#123;</span><br><span class="line">				<span class="keyword">this</span>.right.printNode();</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinaryTreeDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		BinaryTree bt=<span class="keyword">new</span> BinaryTree();</span><br><span class="line">		bt.add(<span class="number">8</span>);</span><br><span class="line">		bt.add(<span class="number">3</span>);</span><br><span class="line">		bt.add(<span class="number">10</span>);</span><br><span class="line">		bt.add(<span class="number">1</span>);</span><br><span class="line">		bt.add(<span class="number">6</span>);</span><br><span class="line">		bt.add(<span class="number">14</span>);</span><br><span class="line">		bt.add(<span class="number">4</span>);</span><br><span class="line">		bt.add(<span class="number">7</span>);</span><br><span class="line">		bt.add(<span class="number">13</span>);</span><br><span class="line">		bt.print();</span><br><span class="line">	&#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/test1.png" alt></p>
 
       
 
@@ -258,7 +252,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/24/我的第一篇博客文章/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/26/java数据结构之二叉树/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -272,15 +266,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/04/26/java/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/04/27/Java APi之StringBuffer与StringBuilder区别/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java 数据结构之二叉树(中序遍历)
+          Java APi之StringBuffer与StringBuilder区别
         
       </div>
     </a>
   
+  
+    <a href="/2019/04/24/Java代理模式(Proxy)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java代理模式(Proxy)</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -452,27 +451,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="https://blog.csdn.net/weixin_44117272" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的CSDN博客</a>
             </li>
           
         </ul>
@@ -483,7 +462,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">某不知名本科计科学生</div>
   	  	
     	</section>
     

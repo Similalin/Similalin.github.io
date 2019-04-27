@@ -1,0 +1,17 @@
+安装node.js和Git
+1.npm install -g cnpm --registry=http://registry.npm.taobao.org   //安装cnpm
+2.cnpm -v                                                         //查看版本
+3.cnpm install -g hexo-cli                                        //安装hexo-cli博客框架，基于node
+4.hexo -v							  //查看版本
+5.hexo init							  //生成博客
+6.hexo s                                                          //启动博客,http://localhost:4000
+8.hexo n "我的第一篇博客文章"					  //编写博客
+7.hexo clean
+9.hexo g                                                          //生成
+10.cnpm install --save hexo-deployer-git                	  //git部署的插件
+deploy: 
+  type: git
+  repo: https://github.com/Similalin/Similalin.github.io.git
+  branch: master
+
+11.换主题 git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
