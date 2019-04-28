@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java 数据结构之二叉树(中序遍历) | Zhanglinfeng&#39;s blog</title>
+  <title>HashMap的实现原理 | Zhanglinfeng&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="HashMap的实现原理:  1.基于哈希表(数组+链表+二叉树(红黑树)) 2.默认加载因子为0.75，默认数组大小是16， 3.把对象储存到哈希表中，如何存储 ? 把key对象通过hash()方法计算hash值，然后用这个hash值对数组长度取余(默认16)来决定该Key对象 在数组中存储的位置，当这个位置有多个对象时，以链表结构存储，jdk1.8后，当链表长度大于8时,链表将 转换为红黑树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java 数据结构之二叉树(中序遍历)">
+<meta property="og:title" content="HashMap的实现原理">
 <meta property="og:url" content="http://yoursite.com/2019/04/28/Java之Map/index.html">
 <meta property="og:site_name" content="Zhanglinfeng&#39;s blog">
 <meta property="og:description" content="HashMap的实现原理:  1.基于哈希表(数组+链表+二叉树(红黑树)) 2.默认加载因子为0.75，默认数组大小是16， 3.把对象储存到哈希表中，如何存储 ? 把key对象通过hash()方法计算hash值，然后用这个hash值对数组长度取余(默认16)来决定该Key对象 在数组中存储的位置，当这个位置有多个对象时，以链表结构存储，jdk1.8后，当链表长度大于8时,链表将 转换为红黑树">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-28T12:02:55.141Z">
+<meta property="og:updated_time" content="2019-04-28T12:10:11.190Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java 数据结构之二叉树(中序遍历)">
+<meta name="twitter:title" content="HashMap的实现原理">
 <meta name="twitter:description" content="HashMap的实现原理:  1.基于哈希表(数组+链表+二叉树(红黑树)) 2.默认加载因子为0.75，默认数组大小是16， 3.把对象储存到哈希表中，如何存储 ? 把key对象通过hash()方法计算hash值，然后用这个hash值对数组长度取余(默认16)来决定该Key对象 在数组中存储的位置，当这个位置有多个对象时，以链表结构存储，jdk1.8后，当链表长度大于8时,链表将 转换为红黑树">
   
     <link rel="alternative" href="/atom.xml" title="Zhanglinfeng&#39;s blog" type="application/atom+xml">
@@ -155,7 +155,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Java 数据结构之二叉树(中序遍历)
+      HashMap的实现原理
     </h1>
   
 
