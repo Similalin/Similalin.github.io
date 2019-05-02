@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Zhanglinfeng&#39;s blog</title>
+  <title>Java 线程同步的三种方法介绍 | Zhanglinfeng&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Zhanglinfeng&apos;s blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zhanglinfeng&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="1.多线程共享数据：在多线程中，多个线程k可能同时处理同一个资源，这就是在多线程中的共享数据  2.线程同步  解决数据共享问题，必须使用同步，所谓同步就是指多个线程在同一个时间段只能有一个线程执行指定代码，其他线程要等待此线程完成之后才可以继续执行。 线程进行同步，有以下三种方法: (1)同步代码块 synchronized(要同步的对象){要同步的操作} (2)同步方法 public sync">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 线程同步的三种方法介绍">
+<meta property="og:url" content="http://yoursite.com/2019/05/02/Java 线程同步的三种方法介绍/index.html">
 <meta property="og:site_name" content="Zhanglinfeng&#39;s blog">
-<meta property="og:description" content="Zhanglinfeng&apos;s blog">
+<meta property="og:description" content="1.多线程共享数据：在多线程中，多个线程k可能同时处理同一个资源，这就是在多线程中的共享数据  2.线程同步  解决数据共享问题，必须使用同步，所谓同步就是指多个线程在同一个时间段只能有一个线程执行指定代码，其他线程要等待此线程完成之后才可以继续执行。 线程进行同步，有以下三种方法: (1)同步代码块 synchronized(要同步的对象){要同步的操作} (2)同步方法 public sync">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-02T03:24:34.259Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zhanglinfeng&#39;s blog">
-<meta name="twitter:description" content="Zhanglinfeng&apos;s blog">
+<meta name="twitter:title" content="Java 线程同步的三种方法介绍">
+<meta name="twitter:description" content="1.多线程共享数据：在多线程中，多个线程k可能同时处理同一个资源，这就是在多线程中的共享数据  2.线程同步  解决数据共享问题，必须使用同步，所谓同步就是指多个线程在同一个时间段只能有一个线程执行指定代码，其他线程要等待此线程完成之后才可以继续执行。 线程进行同步，有以下三种方法: (1)同步代码块 synchronized(要同步的对象){要同步的操作} (2)同步方法 public sync">
   
     <link rel="alternative" href="/atom.xml" title="Zhanglinfeng&#39;s blog" type="application/atom+xml">
   
@@ -147,16 +148,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Java 线程同步的三种方法介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Java 线程同步的三种方法介绍" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/02/Java 线程同步的三种方法介绍/">Java 线程同步的三种方法介绍</a>
+    <h1 class="article-title" itemprop="name">
+      Java 线程同步的三种方法介绍
     </h1>
   
 
@@ -190,6 +189,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -197,16 +217,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/02/Java 线程同步的三种方法介绍/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/02/Java 线程同步的三种方法介绍/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/28/Java之Map/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HashMap的实现原理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -226,284 +305,14 @@
 
 
 
-
   
-    <article id="post-Java之Map" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/28/Java之Map/">HashMap的实现原理</a>
-    </h1>
   
 
-        
-        <a href="/2019/04/28/Java之Map/" class="archive-article-date">
-  	<time datetime="2019-04-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p> <strong>HashMap的实现原理:</strong></p>
-<ul>
-<li>1.基于哈希表(数组+链表+二叉树(红黑树))</li>
-<li>2.默认加载因子为0.75，默认数组大小是16，</li>
-<li>3.把对象储存到哈希表中，如何存储 ?</li>
-<li>把key对象通过hash()方法计算hash值，然后用这个hash值对数组长度取余(默认16)来决定该Key对象</li>
-<li>在数组中存储的位置，当这个位置有多个对象时，以链表结构存储，jdk1.8后，当链表长度大于8时,链表将</li>
-<li>转换为红黑树结构存储。</li>
-<li>目的是为了取值时，提高效率，取值更快</li>
-<li>扩充原理：当数组的容量超过了75%，表示该数组需要扩充</li>
-<li>扩充的算法是：当前数组容量&lt;&lt;1(右移一位)(相当于*2),扩充一倍；缺点：扩充次数过多，会影响性能，每次扩充表示哈希表重新散列</li>
-<li>(重新计算每个对象的储存位置)，在开发中要尽量减少扩充次数带来的性能问题。</li>
-<li>线程不安全，适合在单线程中使用<br><strong>LinkedHashMap</strong><br>LinkedHashMap是HashMap的子类，由于HashMap不能保证顺序恒久不变，此类使用了一个双重链表来维护元素添加顺序<br><strong>Hashtable</strong><ul>
-<li>基于哈希表实现</li>
-<li>默认数值大小为11，加载因子0.75</li>
-<li>扩充方式：原数组大小*2+1；原数组大小&lt;&lt;1+1</li>
-<li>线程安全的，用在多线程</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Collection;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Hashtable;</span><br><span class="line"><span class="keyword">import</span> java.util.LinkedHashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Map.Entry;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Map接口:</span></span><br><span class="line"><span class="comment"> * 1.键值对储存一组对象</span></span><br><span class="line"><span class="comment"> * 2.Key保证唯一，不能重复，Value可以重复</span></span><br><span class="line"><span class="comment"> * 3.具体的实现类:HashMap TreeMap Hashtable LinkedHashMap</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * HashMap的实现原理:</span></span><br><span class="line"><span class="comment"> * 1.基于哈希表(数组+链表+二叉树(红黑树))</span></span><br><span class="line"><span class="comment"> * 2.默认加载因子为0.75，默认数组大小是16，</span></span><br><span class="line"><span class="comment"> * 3.把对象储存到哈希表中，如何存储 ?</span></span><br><span class="line"><span class="comment"> * 		把key对象通过hash()方法计算hash值，然后用这个hash值对数组长度取余(默认16)来决定该Key对象</span></span><br><span class="line"><span class="comment"> * 	 在数组中存储的位置，当这个位置有多个对象时，以链表结构存储，jdk1.8后，当链表长度大于8时,链表将</span></span><br><span class="line"><span class="comment"> *   转换为红黑树结构存储。</span></span><br><span class="line"><span class="comment"> * 目的是为了取值时，提高效率，取值更快</span></span><br><span class="line"><span class="comment"> * 扩充原理：当数组的容量超过了75%，表示该数组需要扩充</span></span><br><span class="line"><span class="comment"> * 扩充的算法是：当前数组容量&lt;&lt;1(右移一位)(相当于*2),扩充一倍；缺点：扩充次数过多，会影响性能，每次扩充表示哈希表重新散列</span></span><br><span class="line"><span class="comment"> * (重新计算每个对象的储存位置)，在开发中要尽量减少扩充次数带来的性能问题。</span></span><br><span class="line"><span class="comment"> * 5.线程不安全，适合在单线程中使用</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MapDemo</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * LinkedHashMap是HashMap的子类，由于HashMap不能保证顺序恒久不变，此类使用了一个双重链表来维护元素添加顺序</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">HashMap</span><span class="params">()</span></span>&#123;</span><br><span class="line">	Map&lt;String,String&gt; table=<span class="keyword">new</span> LinkedHashMap&lt;&gt;();</span><br><span class="line">	table.put(<span class="string">"one"</span>,<span class="string">"Lily"</span>);</span><br><span class="line">	table.put(<span class="string">"two"</span>,<span class="string">"Tom"</span>);</span><br><span class="line">	table.put(<span class="string">"three"</span>,<span class="string">"Bin"</span>);</span><br><span class="line">	table.forEach((key,value)-&gt;System.out.println(key+<span class="string">"-&gt;"</span>+value));</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">hashtable</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 基于哈希表实现</span></span><br><span class="line"><span class="comment">	 * 默认数值大小为11，加载因子0.75</span></span><br><span class="line"><span class="comment">	 * 扩充方式：原数组大小*2+1；原数组大小&lt;&lt;1+1</span></span><br><span class="line"><span class="comment">	 * 线程安全的，用在多线程</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	Map&lt;String,String&gt; table=<span class="keyword">new</span> Hashtable&lt;&gt;();</span><br><span class="line">	table.put(<span class="string">"one"</span>,<span class="string">"Lily"</span>);</span><br><span class="line">	table.put(<span class="string">"two"</span>,<span class="string">"Tom"</span>);</span><br><span class="line">	table.put(<span class="string">"three"</span>,<span class="string">"Bin"</span>);</span><br><span class="line">	table.forEach((key,value)-&gt;System.out.println(key+<span class="string">"-&gt;"</span>+value));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">hashMap</span><span class="params">()</span></span>&#123;</span><br><span class="line">	Map&lt;Integer,String&gt; map=<span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">	map.put(<span class="number">1</span>, <span class="string">"Tom"</span>);</span><br><span class="line">	map.put(<span class="number">2</span>, <span class="string">"Jack"</span>);</span><br><span class="line">	map.put(<span class="number">3</span>, <span class="string">"Vince"</span>);</span><br><span class="line">	map.put(<span class="number">4</span>, <span class="string">"Bin"</span>);</span><br><span class="line">	map.put(<span class="number">5</span>, <span class="string">"Lily"</span>);</span><br><span class="line">	map.put(<span class="number">6</span>, <span class="string">"Mack"</span>);</span><br><span class="line">	System.out.println(<span class="string">"size="</span>+map.size());</span><br><span class="line">	<span class="comment">//从Map中取值,通过Map的get方法获取值</span></span><br><span class="line">	System.out.println(map.get(<span class="number">1</span>));<span class="comment">//通过key取value</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//map的遍历</span></span><br><span class="line">	Set&lt;Entry&lt;Integer,String&gt;&gt; entrySet=map.entrySet();</span><br><span class="line">	<span class="keyword">for</span>(Entry e:entrySet)&#123;</span><br><span class="line">		System.out.println(e.getKey()+<span class="string">"-&gt;"</span>+e.getValue());</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//System.out.println(map.entrySet());</span></span><br><span class="line">	<span class="comment">//2.遍历键</span></span><br><span class="line">	System.out.println(<span class="string">"-----------------"</span>);</span><br><span class="line">	Set&lt;Integer&gt; keys=map.keySet();</span><br><span class="line">	<span class="keyword">for</span>(Integer i:keys)&#123;</span><br><span class="line">		String value=map.get(i);</span><br><span class="line">		System.out.println(i+<span class="string">"-&gt;"</span>+value);</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(<span class="string">"-----------------"</span>);</span><br><span class="line">	<span class="comment">//3.便利值</span></span><br><span class="line">	Collection&lt;String&gt; values=map.values();</span><br><span class="line">	<span class="keyword">for</span>(String s:values)&#123;</span><br><span class="line">		System.out.println(s);</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(<span class="string">"-----------------"</span>);</span><br><span class="line">	<span class="comment">//4.foreach</span></span><br><span class="line">	map.forEach((key,value)-&gt;System.out.println(key+<span class="string">"-&gt;"</span>+value));</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//权限</span></span><br><span class="line">	System.out.println(map.containsKey(<span class="number">6</span>));</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//hash</span></span><br><span class="line">	Integer key=<span class="number">1434</span>;</span><br><span class="line">	System.out.println(<span class="number">1434</span>%<span class="number">16</span>);</span><br><span class="line">&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//hashMap();</span></span><br><span class="line">		hashtable();</span><br><span class="line">		linkedHashMap();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/28/Java之Map/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java APi之StringBuffer与StringBuilder区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/27/Java APi之StringBuffer与StringBuilder区别/">Java APi之StringBuffer与StringBuilder区别</a>
-    </h1>
   
 
-        
-        <a href="/2019/04/27/Java APi之StringBuffer与StringBuilder区别/" class="archive-article-date">
-  	<time datetime="2019-04-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="StringBuffer"><a href="#StringBuffer" class="headerlink" title="StringBuffer"></a>StringBuffer</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringBufferDome</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		String a=<span class="string">"a"</span>;</span><br><span class="line">		String b=<span class="string">"b"</span>;</span><br><span class="line">		String c=a+b+<span class="number">1</span>;<span class="comment">//在内存中a,b,1,a+b,a+b+1;五个对象</span></span><br><span class="line">		System.out.println(c);</span><br><span class="line">		</span><br><span class="line">		String d=<span class="string">"a"</span>+<span class="number">1</span>+<span class="number">2</span>+<span class="number">3</span>+<span class="number">4</span>+<span class="string">"b"</span>;<span class="comment">//一个对象a1234b </span></span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		 * 用StringBuffer解决变量对象占用内存</span></span><br><span class="line"><span class="comment">		1.StringBuffer目的是来解决字符串相加时带来的性能问题(常来与变量)</span></span><br><span class="line"><span class="comment">		2.StringBuffer的内部实现采用字符数组，默认数组的长度为16，超过数组大小时动态扩充的算法是原来长度*2+2,</span></span><br><span class="line"><span class="comment">		所以当我们已经预知要添加的数据长度时，建议使用带初始容量的的方法，来避免动态扩充的次数，从而提高效率</span></span><br><span class="line"><span class="comment">		3.线程安全的，会影响性能</span></span><br><span class="line"><span class="comment">		 * */</span></span><br><span class="line">		</span><br><span class="line">		StringBuffer sb=<span class="keyword">new</span> StringBuffer(<span class="number">32</span>);<span class="comment">//带容量的构造，建议</span></span><br><span class="line">		sb.append(a).append(b).append(<span class="number">1</span>);</span><br><span class="line">		System.out.println(sb.toString());</span><br><span class="line">		</span><br><span class="line">		StringBuffer sb2=<span class="keyword">new</span> StringBuffer(<span class="string">"abc"</span>);</span><br><span class="line">		System.out.println(sb2);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 字符串相加操作</span></span><br><span class="line"><span class="comment"> * 1.多个常量相加没有性能问题，在编译优化</span></span><br><span class="line"><span class="comment"> * 2.变量与常量相加，会产生多个垃圾对象</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Zhanglinfeng</span></span><br><span class="line"><span class="comment"> *javap -c StringBuliderDemo //汇编</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringBuliderDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mian</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">/**面试题:StringBuffer与StringBuilder的区别?</span></span><br><span class="line"><span class="comment">		 * StringBuffer是线程安全的，性能低，适合在多线程的使用</span></span><br><span class="line"><span class="comment">		 * StringBuilder是线程不安全的，性能高，适合在单线程中使用，</span></span><br><span class="line"><span class="comment">		 * 这种情况占大多数，在jdk1.5后添加</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		StringBuilder sb=<span class="keyword">new</span> StringBuilder();</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		String a=<span class="string">"a"</span>+<span class="number">1</span>;</span><br><span class="line">		String b=a+<span class="string">"b"</span>;</span><br><span class="line">		String c=<span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">			c+=i;<span class="comment">//每次循环会产一个StringBuilder对象实现拼接，性能低，最好是手动创建StringBuilder</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//1.字符串相加，在编译后，会使用StringBuilder来优化代码，实现拼接</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如何在cmd里查看虚拟机的运行<br>使用javap -c xxx<br><img src="/images/javaStringBuilder.png" alt></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/27/Java APi之StringBuffer与StringBuilder区别/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java数据结构之二叉树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/26/java数据结构之二叉树/">Java 数据结构之二叉树(中序遍历)</a>
-    </h1>
   
 
-        
-        <a href="/2019/04/26/java数据结构之二叉树/" class="archive-article-date">
-  	<time datetime="2019-04-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="构造二叉树类，创建添加和输出方法"><a href="#构造二叉树类，创建添加和输出方法" class="headerlink" title="构造二叉树类，创建添加和输出方法"></a>构造二叉树类，创建添加和输出方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinaryTree</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> Node root;<span class="comment">//根节点</span></span><br><span class="line">	<span class="comment">//添加节点</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(root==<span class="keyword">null</span>)&#123;</span><br><span class="line">			root=<span class="keyword">new</span> Node(data);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			root.addNode(data);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//输出节点</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">		root.printNode();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">		<span class="keyword">private</span> <span class="keyword">int</span> data;</span><br><span class="line">		<span class="keyword">private</span> Node left;</span><br><span class="line">		<span class="keyword">private</span> Node right;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">			<span class="keyword">this</span>.data=data;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addNode</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">			<span class="comment">//传进来的值小于当前值，存左边</span></span><br><span class="line">			<span class="keyword">if</span>(<span class="keyword">this</span>.data&gt;data)&#123;</span><br><span class="line">				<span class="keyword">if</span>(<span class="keyword">this</span>.left==<span class="keyword">null</span>)&#123;</span><br><span class="line">					<span class="keyword">this</span>.left=<span class="keyword">new</span> Node(data);</span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					<span class="keyword">this</span>.left.addNode(data);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="comment">//传进来的值大于当前值,存右边</span></span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="keyword">if</span>(<span class="keyword">this</span>.right==<span class="keyword">null</span>)&#123;</span><br><span class="line">					<span class="keyword">this</span>.right=<span class="keyword">new</span> Node(data);</span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					<span class="keyword">this</span>.right.addNode(data);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//中序遍历</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printNode</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(<span class="keyword">this</span>.left!=<span class="keyword">null</span>)&#123;</span><br><span class="line">				<span class="keyword">this</span>.left.printNode();</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.print(<span class="keyword">this</span>.data+<span class="string">"-&gt;"</span>);</span><br><span class="line">			<span class="keyword">if</span>(<span class="keyword">this</span>.right!=<span class="keyword">null</span>)&#123;</span><br><span class="line">				<span class="keyword">this</span>.right.printNode();</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinaryTreeDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		BinaryTree bt=<span class="keyword">new</span> BinaryTree();</span><br><span class="line">		bt.add(<span class="number">8</span>);</span><br><span class="line">		bt.add(<span class="number">3</span>);</span><br><span class="line">		bt.add(<span class="number">10</span>);</span><br><span class="line">		bt.add(<span class="number">1</span>);</span><br><span class="line">		bt.add(<span class="number">6</span>);</span><br><span class="line">		bt.add(<span class="number">14</span>);</span><br><span class="line">		bt.add(<span class="number">4</span>);</span><br><span class="line">		bt.add(<span class="number">7</span>);</span><br><span class="line">		bt.add(<span class="number">13</span>);</span><br><span class="line">		bt.print();</span><br><span class="line">	&#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/test1.png" alt></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/26/java数据结构之二叉树/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java代理模式(Proxy)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/24/Java代理模式(Proxy)/">Java代理模式(Proxy)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/24/Java代理模式(Proxy)/" class="archive-article-date">
-  	<time datetime="2019-04-24T11:31:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">代理模式(Proxy):为其他对象提供一种代理以控制对这个对象的访问</span></span><br><span class="line"><span class="comment">代理模式说白了就是 "真实对象"的代表，在访问对象时引入一定程度的间接性</span></span><br><span class="line"><span class="comment">因为这总间接性可以附近啊多种用途。</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Proxy</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Action a=<span class="keyword">new</span> UserAction();</span><br><span class="line">        ActionProxy proxy=<span class="keyword">new</span> ActionProxy(a);</span><br><span class="line">        proxy.doAction();</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ActionProxy</span> <span class="keyword">implements</span> <span class="title">Action</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Action target;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ActionProxy</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ActionProxy</span><span class="params">(Action target)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target=target;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAction</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">long</span> startTime=System.currentTimeMillis();</span><br><span class="line">        target.doAction();<span class="comment">//执行真正的业务</span></span><br><span class="line">        <span class="keyword">long</span> endTime=System.currentTimeMillis();</span><br><span class="line">        System.out.println(<span class="string">"共耗时："</span>+(endTime-startTime));</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Action</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAction</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserAction</span> <span class="keyword">implements</span> <span class="title">Action</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAction</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++)&#123;</span><br><span class="line">            System.out.println(<span class="string">"y用户开始工作..."</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/24/Java代理模式(Proxy)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -526,8 +335,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
