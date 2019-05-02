@@ -149,6 +149,91 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java 4种线程池的介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/02/Java 4种线程池的介绍/">Java 4种线程池的介绍</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/02/Java 4种线程池的介绍/" class="archive-article-date">
+  	<time datetime="2019-05-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Java-4种线程池的介绍"><a href="#Java-4种线程池的介绍" class="headerlink" title="Java 4种线程池的介绍"></a>Java 4种线程池的介绍</h3><ul>
+<li>线程池是预先创建线程的一种技术。线程池在还没有任务到来之前，创建一定数量的线程</li>
+<li>放入空闲队列中，然后对这些资源进行复用。减少频繁的创建和销毁对象</li>
+<li>java里面线程池的顶级接口是Executor，是一个执行程序的工具</li>
+<li>线程池接口是ExecutorService</li>
+<li>java.util.concurrent包：并发编程中很常用的实用工具类</li>
+<li>Executor接口：执行已提交的Runnable任务对象</li>
+<li>ExcutorService接口：</li>
+<li><p>Executor提供了管理终止的方法，以及可为跟踪一个或多个异步任务执行状况生成Future的方法</p>
+<h3 id="Executors类："><a href="#Executors类：" class="headerlink" title="Executors类："></a>Executors类：</h3></li>
+<li>此包中所定义的Executor、ExecutorService等的工广和实用方法。<h5 id="1-newSingleThreadExecutor"><a href="#1-newSingleThreadExecutor" class="headerlink" title="1.newSingleThreadExecutor:"></a>1.newSingleThreadExecutor:</h5></li>
+<li>创建一个单线程的线程池。这个线程池只有一个线程在工作，也就是相当于单线程串行执行</li>
+<li>所有任务。如果这个唯一的线程因为异常结束，那么会有一个新的线程来替代它。此线程池</li>
+<li>保证所有任务的执行顺序按照任务提交顺序执行。<h5 id="2-newFixedThreadPool"><a href="#2-newFixedThreadPool" class="headerlink" title="2.newFixedThreadPool"></a>2.newFixedThreadPool</h5></li>
+<li>创建一个固定大小的线程池。每次提交一个任务就是创建一个线程，直到线程达到线程池最大大小。</li>
+<li>线程池大小一旦达到最大值就会保持不变，</li>
+<li>如果某个线程因为执行异常而结束，那么线程池会补充一个新线程<h5 id="3-newCachedThreadPool"><a href="#3-newCachedThreadPool" class="headerlink" title="3.newCachedThreadPool:"></a>3.newCachedThreadPool:</h5></li>
+<li>创建一个可缓存的线程池。如果现场池的大小超过了处理任务所需要的现场，那么就会回收部分空闲(60秒不执行任务)的线程,</li>
+<li>当任务数量增加时，此线程池又可以智能的添加新线程来处理任务。此线程池不会对线程池大小做限制，线程池大小完全依赖</li>
+<li>于操作系统(或者说JVM)能够创建的最大线程大小。<h5 id="4-newScheduledThreadPool"><a href="#4-newScheduledThreadPool" class="headerlink" title="4.newScheduledThreadPool:"></a>4.newScheduledThreadPool:</h5></li>
+<li>创建一个大小无限的线程池。此线程池支持定时以及周期性执行任务需求。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.vince;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.Executors;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.ScheduledExecutorService;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *      线程池是预先创建线程的一种技术。线程池在还没有任务到来之前，创建一定数量的线程</span></span><br><span class="line"><span class="comment"> *  放入空闲队列中，然后对这些资源进行复用。减少频繁的创建和销毁对象</span></span><br><span class="line"><span class="comment"> *      java里面线程池的顶级接口是Executor，是一个执行程序的工具</span></span><br><span class="line"><span class="comment"> *      线程池接口是ExecutorService</span></span><br><span class="line"><span class="comment"> *      java.util.concurrent包：并发编程中很常用的实用工具类</span></span><br><span class="line"><span class="comment"> *  Executor接口：执行已提交的Runnable任务对象</span></span><br><span class="line"><span class="comment"> *  ExcutorService接口：</span></span><br><span class="line"><span class="comment"> *  Executor提供了管理终止的方法，以及可为跟踪一个或多个异步任务执行状况生成Future的方法</span></span><br><span class="line"><span class="comment"> *  Executors类：</span></span><br><span class="line"><span class="comment"> *  此包中所定义的Executor、ExecutorService等的工广和实用方法。</span></span><br><span class="line"><span class="comment"> *  1.newSingleThreadExecutor:</span></span><br><span class="line"><span class="comment"> *  创建一个单线程的线程池。这个线程池只有一个线程在工作，也就是相当于单线程串行执行</span></span><br><span class="line"><span class="comment"> *  所有任务。如果这个唯一的线程因为异常结束，那么会有一个新的线程来替代它。此线程池</span></span><br><span class="line"><span class="comment"> *  保证所有任务的执行顺序按照任务提交顺序执行。</span></span><br><span class="line"><span class="comment"> *  2.newFixedThreadPool</span></span><br><span class="line"><span class="comment"> *  创建一个固定大小的线程池。每次提交一个任务就是创建一个线程，直到线程达到线程池最大大小。</span></span><br><span class="line"><span class="comment"> *  线程池大小一旦达到最大值就会保持不变，</span></span><br><span class="line"><span class="comment"> *  如果某个线程因为执行异常而结束，那么线程池会补充一个新线程</span></span><br><span class="line"><span class="comment"> *  3.newCachedThreadPool:</span></span><br><span class="line"><span class="comment"> *  创建一个可缓存的线程池。如果现场池的大小超过了处理任务所需要的现场，那么就会回收部分空闲(60秒不执行任务)的线程,</span></span><br><span class="line"><span class="comment"> *  当任务数量增加时，此线程池又可以智能的添加新线程来处理任务。此线程池不会对线程池大小做限制，线程池大小完全依赖</span></span><br><span class="line"><span class="comment"> *  于操作系统(或者说JVM)能够创建的最大线程大小。</span></span><br><span class="line"><span class="comment"> *  4.newScheduledThreadPool:</span></span><br><span class="line"><span class="comment"> *  创建一个大小无限的线程池。此线程池支持定时以及周期性执行任务需求。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadDemo5</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      <span class="comment">//创建线程池4种</span></span><br><span class="line">        <span class="comment">//单线程池</span></span><br><span class="line">      <span class="comment">//  ExecutorService es = Executors.newSingleThreadExecutor();</span></span><br><span class="line">        <span class="comment">//固定大小线程池</span></span><br><span class="line">        <span class="comment">//ExecutorService es= Executors.newFixedThreadPool(2);</span></span><br><span class="line">        <span class="comment">//创建一个可缓存的线程池。如果现场池的大小超过了处理任务所需要的现场，那么就会回收部分空闲(60秒不执行任务)的线程,</span></span><br><span class="line">        <span class="comment">// *  当任务数量增加时，此线程池又可以智能的添加新线程来处理任务。</span></span><br><span class="line">        <span class="comment">//ExecutorService es= Executors.newCachedThreadPool();</span></span><br><span class="line">        ScheduledExecutorService es= Executors.newScheduledThreadPool(<span class="number">3</span>);</span><br><span class="line"><span class="comment">//       es.execute(new Myrunnable6());</span></span><br><span class="line"><span class="comment">//       es.execute(new Myrunnable6());</span></span><br><span class="line">       es.schedule(<span class="keyword">new</span> Myrunnable6(),<span class="number">3000</span>, TimeUnit.MILLISECONDS);</span><br><span class="line">       es.shutdown();<span class="comment">//结束</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Myrunnable6</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName()+<span class="string">"----"</span>+i);</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Thread.sleep(<span class="number">300</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/02/Java 4种线程池的介绍/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java 线程同步的三种方法介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
